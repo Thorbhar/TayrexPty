@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Upload Form</title>
+</head>
+<body>
+	<form action="/upload" method="post" enctype="multipart/form-data">
+        <div>
+        <label>Data from Tayrex</label>
+		<input type="file" name="file" id="file" accept=".csv" value="Tayrex"></div>
+        <br>
+        <div>
+        <label>Data from ANZ</label>
+		<input type="file" name="file2" id="file2" accept=".csv"></div>
+        <br>
+        <div>
+        <label>Data from Poli</label>
+		<input type="file" name="file3" id="file3" accept=".csv"></div>
+        <br>
+		<input type="submit" id="submit-button" value="Upload" disabled>
+	</form>
+
+    <form action="/download" method="post" enctype="multipart/form-data">
+        <p>To download result click <input type="submit" name="download" value="Download"></p>
+	</form>
+
+    <script>
+		var fileInputs = document.querySelectorAll('input[type="file"]');
+		var submitButton = document.querySelector('#submit-button');
+		fileInputs.forEach(function(fileInput) {
+			fileInput.addEventListener('change', function() {
+				var allFilesSelected = true;
+				fileInputs.forEach(function(input) {
+					if (input.value == '') {
+						allFilesSelected = false;
+					}
+				});
+				if (allFilesSelected) {
+					submitButton.disabled = false;
+				} else {
+					submitButton.disabled = true;
+				}
+			});
+		});
+	</script>
+
+</body>
+</html>
