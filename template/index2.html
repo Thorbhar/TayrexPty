@@ -1,48 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>File Upload Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Form</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            background-color: #F9FAFC;
+        }
+
+        nav {
+            width: 100%;
+            height: 90px;
+            opacity: 0.8;
+            background: linear-gradient(to bottom, #3b64bfff 0%, #142854 100%);
+        }
+
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .main {
+            padding: 15px;
+            background: #fff;
+            width: 625px;
+            margin: 100px auto 0 auto;
+        }
+
+        #submit-button {
+            width: 130px;
+            margin: 10px auto 0 auto;
+        }
+    </style>
 </head>
 <body>
-	<form action="/upload" method="post" enctype="multipart/form-data">
-        <div>
-        <label>Data from Tayrex</label>
-		<input type="file" name="file" id="file" accept=".csv" value="Tayrex"></div>
-        <br>
-        <div>
-        <label>Data from ANZ</label>
-		<input type="file" name="file2" id="file2" accept=".csv"></div>
-        <br>
-        <div>
-        <label>Data from Poli</label>
-		<input type="file" name="file3" id="file3" accept=".csv"></div>
-        <br>
-		<input type="submit" id="submit-button" value="Upload" disabled>
-	</form>
+    <nav>
+        <div class="container">
+            <img src="{{ url_for('static', filename='image/logo-png.png') }}" width="220px">
+        </div>
+    </nav>
 
-    <form action="/download" method="post" enctype="multipart/form-data">
-        <p>To download result click <input type="submit" name="download" value="Download"></p>
-	</form>
+    <div class="main">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div>
+                <h3 style="margin-right: 30px" >Data from Tayrex</h3>
+                <input type="file" name="file" id="file" accept=".csv" value="Tayrex">
+            </div>
+            <div>
+                <h3 style="margin-right: 30px">Data from ANZ</h3>
+                <input type="file" name="file2" id="file2" accept=".csv">
+            </div>
+            <br>
+            <input type="submit" id="submit-button" value="Upload" disabled>
+        </form>
+
+        <form action="/download" method="post" enctype="multipart/form-data">
+            <p>To download result click <input type="submit" name="download" value="Download" style="margin-left: 30px; width: 130px"></p>
+        </form>
+    </div>
 
     <script>
-		var fileInputs = document.querySelectorAll('input[type="file"]');
-		var submitButton = document.querySelector('#submit-button');
-		fileInputs.forEach(function(fileInput) {
-			fileInput.addEventListener('change', function() {
-				var allFilesSelected = true;
-				fileInputs.forEach(function(input) {
-					if (input.value == '') {
-						allFilesSelected = false;
-					}
-				});
-				if (allFilesSelected) {
-					submitButton.disabled = false;
-				} else {
-					submitButton.disabled = true;
-				}
-			});
-		});
-	</script>
+        var fileInputs = document.querySelectorAll('input[type="file"]');
+        var submitButton = document.querySelector('#submit-button');
+        fileInputs.forEach(function(fileInput) {
+            fileInput.addEventListener('change', function() {
+                var allFilesSelected = true;
+                fileInputs.forEach(function(input) {
+                    if (input.value == '') {
+                        allFilesSelected = false;
+                    }
+                });
+                if (allFilesSelected) {
+                    submitButton.disabled = false;
+                } else {
+                    submitButton.disabled = true;
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

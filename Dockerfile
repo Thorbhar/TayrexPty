@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-# Use the official Python base image
+# Use the official Python base static
 FROM python:3.9-slim
 LABEL maintainer="oloruntoba.olasubomi@gmail.com"
 ENV TZ America/Phoenix

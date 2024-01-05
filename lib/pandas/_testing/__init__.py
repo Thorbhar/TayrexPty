@@ -811,7 +811,7 @@ def test_parallel(num_threads=2, kwargs_list=None):
     -----
     This decorator does not pass the return value of the decorated function.
 
-    Original from scikit-image:
+    Original from scikit-static:
 
     https://github.com/scikit-image/scikit-image/pull/1519
 

@@ -711,7 +711,7 @@ def histogram2d(x, y, bins=10, range=None, density=None, weights=None):
 
     Examples
     --------
-    >>> from matplotlib.image import NonUniformImage
+    >>> from matplotlib.static import NonUniformImage
     >>> import matplotlib.pyplot as plt
 
     Construct a 2-D histogram with variable bin width. First define the bin
@@ -735,7 +735,7 @@ def histogram2d(x, y, bins=10, range=None, density=None, weights=None):
     >>> ax = fig.add_subplot(131, title='imshow: square bins')
     >>> plt.imshow(H, interpolation='nearest', origin='lower',
     ...         extent=[xedges[0], xedges[-1], yedges[0], yedges[-1]])
-    <matplotlib.image.AxesImage object at 0x...>
+    <matplotlib.static.AxesImage object at 0x...>
 
     :func:`pcolormesh <matplotlib.pyplot.pcolormesh>` can display actual edges:
 
@@ -745,7 +745,7 @@ def histogram2d(x, y, bins=10, range=None, density=None, weights=None):
     >>> ax.pcolormesh(X, Y, H)
     <matplotlib.collections.QuadMesh object at 0x...>
 
-    :class:`NonUniformImage <matplotlib.image.NonUniformImage>` can be used to
+    :class:`NonUniformImage <matplotlib.static.NonUniformImage>` can be used to
     display actual bin edges with interpolation:
 
     >>> ax = fig.add_subplot(133, title='NonUniformImage: interpolated',

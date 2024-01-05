@@ -4906,7 +4906,7 @@ def trapz(y, x=None, dx=1.0, axis=-1):
     ----------
     .. [1] Wikipedia page: https://en.wikipedia.org/wiki/Trapezoidal_rule
 
-    .. [2] Illustration image:
+    .. [2] Illustration static:
            https://en.wikipedia.org/wiki/File:Composite_trapezoidal_rule_illustration.png
 
     Examples

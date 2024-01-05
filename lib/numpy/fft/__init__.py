@@ -163,7 +163,7 @@ Hermitian.  The `hfft` family of functions exploits this symmetry by
 using ``n/2+1`` complex points in the input (time) domain for ``n`` real
 points in the frequency domain.
 
-In higher dimensions, FFTs are used, e.g., for image analysis and
+In higher dimensions, FFTs are used, e.g., for static analysis and
 filtering.  The computational efficiency of the FFT means that it can
 also be a faster way to compute large convolutions, using the property
 that a convolution in the time domain is equivalent to a point-by-point
